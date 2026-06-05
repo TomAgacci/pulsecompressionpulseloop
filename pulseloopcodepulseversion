@@ -1,0 +1,9 @@
+def text_pulse(text, W, Omega):
+    pulse = len(text)
+    P_safe = Omega / W
+    P_compressed = min(pulse, P_safe)
+
+    # compressed text = first N characters
+    compressed_text = text[:int(P_compressed)]
+
+    return compressed_text
