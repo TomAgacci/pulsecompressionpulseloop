@@ -1,0 +1,20 @@
+        ┌──────────────────────────────┐
+        │      Incoming Pulse (text)   │
+        └──────────────┬───────────────┘
+                       │
+                       ▼
+             Measure Pulse Length
+                       │
+                       ▼
+             Compression Threshold
+        (min(len(text), Ω/W))
+                       │
+                       ▼
+             Resistance Equilibrium
+        (R = V² / P_compressed)
+                       │
+                       ▼
+             Emit Compressed Text
+                       │
+                       ▼
+             Loop Renewal → next pulse
