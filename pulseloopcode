@@ -1,0 +1,12 @@
+def pulse_loop(pulse, W, Omega, V=1):
+    # Pulse Compression Law I
+    P_safe = Omega / W
+    P_compressed = min(pulse, P_safe)
+
+    # Pulse Compression Law II
+    R = (V**2) / P_compressed if P_compressed > 0 else float('inf')
+
+    # Pulse Compression Law V — Loop Renewal
+    next_pulse = P_compressed * 0.9  # decay or renewal factor
+
+    return P_compressed, R, next_pulse
