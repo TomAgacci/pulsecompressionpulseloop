@@ -1,0 +1,15 @@
+# Example: retrieving and inspecting data from the loop
+cfg = PulseCompressionConfig(
+    steps=64,
+    base_amplitude=1.0,
+    compression_factor=0.8,
+    feedback_gain=0.4,
+    noise_level=0.01,
+    seed=42,
+)
+
+loop = PulseCompressionPulseLoop(cfg, [hsn_modulation_transform(1.0, 1.0, 1.0)])
+data = loop.run()
+
+# data is a list of floats
+print(data[:10])  # preview first 10 values
